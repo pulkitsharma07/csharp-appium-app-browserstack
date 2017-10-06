@@ -1,0 +1,16 @@
+/Volumes/Work/personal/csharp-appium-app-browserstack/ios/csharp-appium-single-app-browserstack/csharp-appium-app-browserstack/obj/x86/Debug/csharp-appium-app-browserstack.csprojResolveAssemblyReference.cache
+/Volumes/Work/personal/csharp-appium-app-browserstack/ios/csharp-appium-single-app-browserstack/csharp-appium-app-browserstack/obj/x86/Debug/csharp-appium-app-browserstack.csproj.CoreCompileInputs.cache
+/Volumes/Work/personal/csharp-appium-app-browserstack/ios/csharp-appium-single-app-browserstack/csharp-appium-app-browserstack/bin/Debug/csharp-appium-app-browserstack.exe
+/Volumes/Work/personal/csharp-appium-app-browserstack/ios/csharp-appium-single-app-browserstack/csharp-appium-app-browserstack/bin/Debug/csharp-appium-app-browserstack.pdb
+/Volumes/Work/personal/csharp-appium-app-browserstack/ios/csharp-appium-single-app-browserstack/csharp-appium-app-browserstack/bin/Debug/appium-dotnet-driver.dll
+/Volumes/Work/personal/csharp-appium-app-browserstack/ios/csharp-appium-single-app-browserstack/csharp-appium-app-browserstack/bin/Debug/Castle.Core.dll
+/Volumes/Work/personal/csharp-appium-app-browserstack/ios/csharp-appium-single-app-browserstack/csharp-appium-app-browserstack/bin/Debug/Newtonsoft.Json.dll
+/Volumes/Work/personal/csharp-appium-app-browserstack/ios/csharp-appium-single-app-browserstack/csharp-appium-app-browserstack/bin/Debug/WebDriver.dll
+/Volumes/Work/personal/csharp-appium-app-browserstack/ios/csharp-appium-single-app-browserstack/csharp-appium-app-browserstack/bin/Debug/WebDriver.Support.dll
+/Volumes/Work/personal/csharp-appium-app-browserstack/ios/csharp-appium-single-app-browserstack/csharp-appium-app-browserstack/bin/Debug/Castle.Core.xml
+/Volumes/Work/personal/csharp-appium-app-browserstack/ios/csharp-appium-single-app-browserstack/csharp-appium-app-browserstack/bin/Debug/Newtonsoft.Json.xml
+/Volumes/Work/personal/csharp-appium-app-browserstack/ios/csharp-appium-single-app-browserstack/csharp-appium-app-browserstack/bin/Debug/WebDriver.xml
+/Volumes/Work/personal/csharp-appium-app-browserstack/ios/csharp-appium-single-app-browserstack/csharp-appium-app-browserstack/bin/Debug/WebDriver.Support.xml
+/Volumes/Work/personal/csharp-appium-app-browserstack/ios/csharp-appium-single-app-browserstack/csharp-appium-app-browserstack/bin/Debug/appium-dotnet-driver.xml
+/Volumes/Work/personal/csharp-appium-app-browserstack/ios/csharp-appium-single-app-browserstack/csharp-appium-app-browserstack/obj/x86/Debug/csharp-appium-app-browserstack.exe
+/Volumes/Work/personal/csharp-appium-app-browserstack/ios/csharp-appium-single-app-browserstack/csharp-appium-app-browserstack/obj/x86/Debug/csharp-appium-app-browserstack.pdb

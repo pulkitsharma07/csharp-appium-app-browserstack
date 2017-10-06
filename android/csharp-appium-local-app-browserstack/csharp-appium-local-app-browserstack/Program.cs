@@ -9,56 +9,56 @@ using BrowserStack;
 namespace BrowserStackAppiumLocalTest
 {
 
-	class MainClass
-	{
+    class MainClass
+    {
 
-		readonly static string userName = Environment.GetEnvironmentVariable("BROWSERSTACK_USERNAME");
-		readonly static string accessKey = Environment.GetEnvironmentVariable("BROWSERSTACK_ACCESS_KEY");
+        readonly static string userName = Environment.GetEnvironmentVariable("BROWSERSTACK_USERNAME");
+        readonly static string accessKey = Environment.GetEnvironmentVariable("BROWSERSTACK_ACCESS_KEY");
 
 
-		public static void Main(string[] args)
-		{
-                        Local local = new Local();
+        public static void Main(string[] args)
+        {
+            Local local = new Local();
 
-	        	List<KeyValuePair<string, string>> options = new List<KeyValuePair<string, string>>() {
-                               new KeyValuePair<string, string>("key", accessKey)
-	                };
+            List<KeyValuePair<string, string>> options = new List<KeyValuePair<string, string>>() {
+               new KeyValuePair<string, string>("key", accessKey)
+            };
 
-                        local.start(options);
+            local.start(options);
 
-			DesiredCapabilities caps = new DesiredCapabilities();
-			caps.SetCapability("browserstack.user", userName);
-			caps.SetCapability("browserstack.key", accessKey);
+            DesiredCapabilities caps = new DesiredCapabilities();
+            caps.SetCapability("browserstack.user", userName);
+            caps.SetCapability("browserstack.key", accessKey);
 
-			caps.SetCapability("realMobile", true);
-			caps.SetCapability("device", "Google Pixel");
-			caps.SetCapability("app", "bs://bb6611026e92325033f8045893ec604918ad2334");
+            caps.SetCapability("realMobile", true);
+            caps.SetCapability("device", "Google Pixel");
+            caps.SetCapability("app", "bs://bb6611026e92325033f8045893ec604918ad2334");
 
-			AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(new Uri("http://hub.browserstack.com/wd/hub"), caps);
+            AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(new Uri("http://hub.browserstack.com/wd/hub"), caps);
 
-			AndroidElement searchElement = (AndroidElement)new WebDriverWait(driver, TimeSpan.FromSeconds(30)).Until(
-				ExpectedConditions.ElementToBeClickable(MobileBy.Id("com.example.android.basicnetworking:id/test_action"))
-			);
-			searchElement.Click();
-			AndroidElement insertTextElement = (AndroidElement)new WebDriverWait(driver, TimeSpan.FromSeconds(30)).Until(
-                                ExpectedConditions.ElementToBeClickable(MobileBy.ClassName("android.widget.TextView"))
-			);
+            AndroidElement searchElement = (AndroidElement)new WebDriverWait(driver, TimeSpan.FromSeconds(30)).Until(
+                ExpectedConditions.ElementToBeClickable(MobileBy.Id("com.example.android.basicnetworking:id/test_action"))
+            );
+            searchElement.Click();
+            AndroidElement insertTextElement = (AndroidElement)new WebDriverWait(driver, TimeSpan.FromSeconds(30)).Until(
+                ExpectedConditions.ElementToBeClickable(MobileBy.ClassName("android.widget.TextView"))
+            );
 
-                        AndroidElement testElement = null;
+            AndroidElement testElement = null;
 
-                        IReadOnlyList<AndroidElement> allTextViewElements =  driver.FindElementsByClassName("android.widget.TextView");
-                        System.Threading.Thread.Sleep(1000);
-                        foreach (AndroidElement textElement in allTextViewElements)
-                        {
-                            if (textElement.Text.Contains("The active connection is"))
-                            {
-                                testElement = textElement;
-                            }
-                        }
+            IReadOnlyList<AndroidElement> allTextViewElements =  driver.FindElementsByClassName("android.widget.TextView");
+            System.Threading.Thread.Sleep(1000);
+            foreach (AndroidElement textElement in allTextViewElements)
+            {
+                if (textElement.Text.Contains("The active connection is"))
+                {
+                    testElement = textElement;
+                }
+            }
 
-                        Console.WriteLine(testElement.Text);
+            Console.WriteLine(testElement.Text);
 
-			driver.Quit();
-		}
-	}
+            driver.Quit();
+        }
+    }
 }

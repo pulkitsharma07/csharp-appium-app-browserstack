@@ -6,23 +6,23 @@ using OpenQA.Selenium.Support.UI;
 
 namespace BrowserStackAppiumSingleTest
 {
-    
+
     class MainClass
     {
 
-		readonly static string userName = Environment.GetEnvironmentVariable("BROWSERSTACK_USERNAME");
+        readonly static string userName = Environment.GetEnvironmentVariable("BROWSERSTACK_USERNAME");
         readonly static string accessKey = Environment.GetEnvironmentVariable("BROWSERSTACK_ACCESS_KEY");
 
 
         public static void Main(string[] args)
         {
             DesiredCapabilities caps = new DesiredCapabilities();
-			caps.SetCapability("browserstack.user", userName);
-			caps.SetCapability("browserstack.key", accessKey);
+            caps.SetCapability("browserstack.user", userName);
+            caps.SetCapability("browserstack.key", accessKey);
 
             caps.SetCapability("realMobile", true);
-			caps.SetCapability("device", "Google Pixel");
-			caps.SetCapability("app", "bs://a0c2cdf522e11d92b149c553c5a32d34db7cb3c6");
+            caps.SetCapability("device", "Google Pixel");
+            caps.SetCapability("app", "bs://a0c2cdf522e11d92b149c553c5a32d34db7cb3c6");
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(new Uri("http://hub.browserstack.com/wd/hub"), caps);
             AndroidElement searchElement = (AndroidElement)new WebDriverWait(driver,TimeSpan.FromSeconds(30)).Until(

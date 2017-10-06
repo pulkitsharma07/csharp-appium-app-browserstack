@@ -18,13 +18,13 @@ namespace BrowserStackAppiumLocalTest
 
 		public static void Main(string[] args)
 		{
-            Local local = new Local();
+                        Local local = new Local();
 
-			List<KeyValuePair<string, string>> options = new List<KeyValuePair<string, string>>() {
-                new KeyValuePair<string, string>("key", accessKey)
-	        };
+	        	List<KeyValuePair<string, string>> options = new List<KeyValuePair<string, string>>() {
+                               new KeyValuePair<string, string>("key", accessKey)
+	                };
 
-            local.start(options);
+                        local.start(options);
 
 			DesiredCapabilities caps = new DesiredCapabilities();
 			caps.SetCapability("browserstack.user", userName);
@@ -41,21 +41,22 @@ namespace BrowserStackAppiumLocalTest
 			);
 			searchElement.Click();
 			AndroidElement insertTextElement = (AndroidElement)new WebDriverWait(driver, TimeSpan.FromSeconds(30)).Until(
-                ExpectedConditions.ElementToBeClickable(MobileBy.ClassName("android.widget.TextView"))
+                                ExpectedConditions.ElementToBeClickable(MobileBy.ClassName("android.widget.TextView"))
 			);
 
-            AndroidElement testElement = null;
+                        AndroidElement testElement = null;
 
-            IReadOnlyList<AndroidElement> allTextViewElements =  driver.FindElementsByClassName("android.widget.TextView");
-            System.Threading.Thread.Sleep(1000);
-            foreach (AndroidElement textElement in allTextViewElements)
-            {
-                if (textElement.Text.Contains("The active connection is"))
-                {
-                    testElement = textElement;
-                }
-            }
-            Console.WriteLine(testElement.Text);
+                        IReadOnlyList<AndroidElement> allTextViewElements =  driver.FindElementsByClassName("android.widget.TextView");
+                        System.Threading.Thread.Sleep(1000);
+                        foreach (AndroidElement textElement in allTextViewElements)
+                        {
+                            if (textElement.Text.Contains("The active connection is"))
+                            {
+                                testElement = textElement;
+                            }
+                        }
+
+                        Console.WriteLine(testElement.Text);
 
 			driver.Quit();
 		}

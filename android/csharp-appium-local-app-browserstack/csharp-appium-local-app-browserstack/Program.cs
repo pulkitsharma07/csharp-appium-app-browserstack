@@ -32,6 +32,7 @@ namespace BrowserStackAppiumLocalTest
 
             caps.SetCapability("realMobile", true);
             caps.SetCapability("device", "Google Pixel");
+            caps.SetCapability("browserstack.local", true);
             caps.SetCapability("app", "bs://<hashed app-id>");
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(new Uri("http://hub.browserstack.com/wd/hub"), caps);

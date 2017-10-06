@@ -31,8 +31,8 @@ namespace BrowserStackAppiumLocalTest
             caps.SetCapability("browserstack.key", accessKey);
 
             caps.SetCapability("realMobile", true);
-			caps.SetCapability("device", "iPhone 7");
-			caps.SetCapability("browserstack.local", true);
+            caps.SetCapability("device", "iPhone 7");
+            caps.SetCapability("browserstack.local", true);
             caps.SetCapability("app", "bs://-hashed-id");
 
             IOSDriver<IOSElement> driver = new IOSDriver<IOSElement>(new Uri("http://hub.browserstack.com/wd/hub"), caps);
@@ -40,7 +40,7 @@ namespace BrowserStackAppiumLocalTest
             IOSElement testButton = (IOSElement)new WebDriverWait(driver, TimeSpan.FromSeconds(30)).Until(
                 ExpectedConditions.ElementToBeClickable(MobileBy.AccessibilityId("TestBrowserStackLocal"))
             );
-			testButton.Click();
+            testButton.Click();
 
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             wait.Until(ExpectedConditions.TextToBePresentInElementValue(driver.FindElement(MobileBy.AccessibilityId("ResultBrowserStackLocal")), "Response is: Up and running"));

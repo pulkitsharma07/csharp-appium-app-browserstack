@@ -34,30 +34,30 @@ namespace BrowserStackAppiumSingleTest
                 ExpectedConditions.ElementToBeClickable(MobileBy.AccessibilityId("Email address"))
             );
 
-			// element.SendKeys() method is not supported in Appium 1.6.3
-			// Workaround for SendKeys() method:
+            // element.SendKeys() method is not supported in Appium 1.6.3
+            // Workaround for SendKeys() method:
             emailTextField.Click();
-			String email = "hello@browserstack.com";
+            String email = "hello@browserstack.com";
             for (int i = 0; i < email.Length; i++)
-			{
+            {
                 driver.FindElementByXPath("//XCUIElementTypeKey[@name='" + email[i] + "']").Click();
-			}
+	    }
 
             driver.FindElementByAccessibilityId("Next").Click();
             System.Threading.Thread.Sleep(5000);
 
 
             IReadOnlyList <IOSElement> textElements = driver.FindElementsByXPath("//XCUIElementTypeStaticText");
-			
-			String matchedString = "";
-			foreach(IOSElement textElement in textElements)
-			{
+
+            String matchedString = "";
+            foreach(IOSElement textElement in textElements)
+            {
                 String textContent = textElement.Text;
                 if (textContent.Contains("not registered"))
-				{
-					matchedString = textContent;
-				}
-			}
+                {
+                    matchedString = textContent;
+                }
+            }
 
             Console.WriteLine(matchedString);
             driver.Quit();
